@@ -5,7 +5,6 @@ public class DynamicArray {
 
 public static ArrayList<Integer> myArray = new ArrayList<Integer>(3);
 
-
 public static void addToArray (int value){
     myArray.add(value);
 }

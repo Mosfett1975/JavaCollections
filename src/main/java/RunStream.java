@@ -2,13 +2,16 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
-public class Run {
+public class RunStream {
     public static int sizeOfArray = 1000000;
 
     public static void main(String[] args) {
 
         DynamicArray dynamicArray = new DynamicArray();
+        Stream stream = dynamicArray.myArray.stream();
+
 
 /** Fill collection with sequence 0 - 1000000 **/
 
@@ -28,6 +31,10 @@ public class Run {
  Map always contains only unique keys **/
 
         Map<Integer, Boolean> map = new HashMap<>();
+
+//        stream.filter(i -> {
+//            return dynamicArray.myArray();
+//        }).map()
         for (int i = 0; i < dynamicArray.myArray.size(); i++) {
             map.put(dynamicArray.get(i), true);
         }
@@ -53,7 +60,7 @@ for (int i =0; i< dynamicArray.myArray.size()/10; i++){
  and demonstrate that the order is arbitrary
  **/
         Collections.shuffle(dynamicArray.myArray);
-        List firstSix = dynamicArray.myArray.subList(0, 7);
+        List<Integer> firstSix = dynamicArray.myArray.subList(0, 7);
         System.out.println("Display that the order is arbitrary  - " + firstSix);
 
     }
