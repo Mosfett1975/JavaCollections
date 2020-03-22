@@ -1,7 +1,4 @@
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Run {
     public static int sizeOfArray = 1000000;
@@ -27,11 +24,12 @@ public class Run {
 /** Check for uniqueness of elements -
  Map always contains only unique keys **/
 
-        Map<Integer, Boolean> map = new HashMap<>();
+        HashSet h = new HashSet();
         for (int i = 0; i < dynamicArray.myArray.size(); i++) {
-            map.put(dynamicArray.get(i), true);
+            h.add(dynamicArray.get(i));
         }
-        if (dynamicArray.myArray.size() == map.size()) System.out.println("List contains only unique keys!");
+        if (dynamicArray.myArray.size() == h.size()) System.out.println("List contains only unique keys!");
+        
 
 /** Remove odd elemets from list. Only tenth part of array**/
 for (int i =0; i< dynamicArray.myArray.size()/10; i++){
