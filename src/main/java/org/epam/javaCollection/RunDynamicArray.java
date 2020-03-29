@@ -1,6 +1,10 @@
+package org.epam.javaCollection;
+
+import org.epam.javaCollection.dynamicArray.DynamicArray;
+
 import java.util.Arrays;
 
-public class Arr {
+public class RunDynamicArray {
 
 
     public static void main(String[] args) {
@@ -17,14 +21,18 @@ public class Arr {
 
 dynamicArray.addToArray(5);
 
-/** get value from the array by index **/
-dynamicArray.get(5);
 
-/** Display condition of th array **/
+/** get value from the array by index **/
+System.out.println(dynamicArray.get(3));
+
+
+/** Display condition of the array **/
 Arrays.asList(dynamicArray).forEach(System.out::println);
+
 
 /** Delete element from the array **/
         dynamicArray.removeByIndex(3);
+
 
 /** Show a result **/
 Arrays.asList(dynamicArray).forEach(System.out::println);

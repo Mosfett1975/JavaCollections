@@ -1,12 +1,11 @@
-
-import sun.awt.SunHints;
+package org.epam.javaCollection.dynamicArray;
 
 import java.util.Arrays;
 
 
 public class DynamicArray {
 
-    static int[] myArray;
+   public static int[] myArray;
 
 
     public DynamicArray(int sizeOfArray) {
@@ -22,8 +21,8 @@ public class DynamicArray {
 
 
     //get value by index
-    public static void get(int getIndex) {
-        System.out.println(myArray[getIndex]);;
+    public static int get(int getIndex) {
+           return myArray[getIndex];
     }
 
     //decrease size of the array
