@@ -9,7 +9,7 @@ public class RunCollection {
     public static void main(String[] args) {
 
 /** Create collection **/
-       ArrayList<Integer> list = new ArrayList();
+       List<Integer> list = new ArrayList();
 
 
 /** Fill collection with sequence 0 - 1000000 **/
@@ -31,16 +31,14 @@ public class RunCollection {
  Map always contains only unique keys **/
 
         HashSet h = new HashSet();
-        for (int i = 0; i < list.size(); i++) {
-            h.add(list.get(i));
-        }
+        list.forEach(i-> h.add(list.get(i)));
         if (list.size() == h.size()) System.out.println("List contains only unique keys!");
 
 /** Find minimal elements in collection **/
 
         System.out.println(Collections.min(list) + " - This is minimal element");
 
-/** Remove odd elemets from list. Only tenth part of array**/
+/** Remove odd elemets from list.**/
     list.removeIf(i -> i %2 !=0);
 
 
