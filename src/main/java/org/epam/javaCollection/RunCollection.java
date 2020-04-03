@@ -8,11 +8,11 @@ public class RunCollection {
 
     public static void main(String[] args) {
 
-/** Create collection **/
+/** Create list **/
        List<Integer> list = new ArrayList();
 
 
-/** Fill collection with sequence 0 - 1000000 **/
+/** Fill list with sequence 0 - 1000000 **/
 
         for (int i = 0; i < sizeOfArray; i++) {
             list.add(i);
@@ -20,36 +20,38 @@ public class RunCollection {
 
 /**
  Organize random access
- selects the first 7 values ​​from a mixed list
+ selects the first 7 values ​from a mixed list
  and demonstrate that the order is arbitrary
  **/
         Collections.shuffle(list);
-        List firstSix = list.subList(0, 7);
+        List firstSix = list.subList(0, 6);
         System.out.println("Display that the order is arbitrary  - " + firstSix);
 
-/** Check for uniqueness of elements -
+/** Check for uniqueness of value -
  Map always contains only unique keys **/
 
         HashSet h = new HashSet();
         list.forEach(i-> h.add(list.get(i)));
         if (list.size() == h.size()) System.out.println("List contains only unique keys!");
 
-/** Find minimal elements in collection **/
+/** Find minimal value in collection **/
 
-        System.out.println(Collections.min(list) + " - This is minimal element");
+        System.out.println(Collections.min(list) + " - This is minimal value");
 
-/** Remove odd elemets from list.**/
+/** Remove odd values from list.**/
     list.removeIf(i -> i %2 !=0);
 
 
-/** Display that all odd elements were removed. Fist 10 elements only **/
+/** Display that all odd values were removed. Fist 10 value only **/
        for (int i = 0; i < 10; i++){
            System.out.println(list.get(i));
        }
 
-/** Find last by one element in collection **/
-
-        System.out.println(Collections.max(list) - 2 + " - This is maхimal element");
+/** Find last but one value in collection **/
+        List butOne = list.subList(0, list.size());
+        butOne.remove(Collections.max(butOne));
+        System.out.println(Collections.max(butOne) + " This is last but one value");
+        System.out.println(list.indexOf(Collections.max(butOne)) + " This is index of the last but one value");
 
     }
 

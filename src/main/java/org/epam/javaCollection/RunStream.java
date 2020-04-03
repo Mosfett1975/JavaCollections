@@ -15,16 +15,15 @@ public class RunStream {
     public static void main(String[] args) {
 
 
-/** Create collection **/
+/** Create list **/
         List<Integer> list = new ArrayList<>();
 
 
-/** Fill collection with sequence 0 - 1000000 **/
+/** Fill list with sequence 0 - 1000000 **/
         IntStream.range(0, sizeOfArray).forEach(list::add);
 
 /** shuffle the list **/
         Collections.shuffle(list);
-
 
 /** Check for uniqueness of elements -
  Set always contains only unique keys **/
