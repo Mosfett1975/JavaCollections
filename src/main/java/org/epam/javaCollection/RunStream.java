@@ -1,5 +1,6 @@
 package org.epam.javaCollection;
 
+
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
@@ -22,6 +23,8 @@ public class RunStream {
 
 /** shuffle the list **/
         Collections.shuffle(list);
+        System.out.println("Display that order is random:");
+        list.subList(0, 5).stream().forEach(System.out::println);
 
 /** Check for uniqueness of elements **/
         List<Integer> distinctElements = list.stream()
@@ -29,20 +32,17 @@ public class RunStream {
                 .collect(Collectors.toList());
         if (list.size() == distinctElements.size()) System.out.println("List contains only unique keys!");
 
-
 /** Get minimal value in list **/
 System.out.println(list.stream().min(Integer::compare).get() + " - This is minimal value");
-
-
 
 /** Remove odd elemets from list. Only tenth part of array**/
        list = list.stream().filter(i -> i % 2 == 0).collect(Collectors.toList());
         List firstTen = list.subList(0, 10);
         System.out.println("Display that the list has even numbers only  - " + firstTen);
 
-
-
-
+/** Get last but one value **/
+        System.out.println(Collections.singletonList(list.stream().sorted(Comparator.reverseOrder())
+                .toArray(Integer[]::new)[1]) + " - This is last but one value in the list");
 
     }
 
